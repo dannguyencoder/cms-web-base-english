@@ -1,5 +1,5 @@
 /**
- * 封装axios 新增头部添加authorization的方法
+ * Package axios new header to add authorization method
  */
 import axios from 'axios';
 import { authorization } from './authorization';

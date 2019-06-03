@@ -137,23 +137,23 @@ export default class Administrators extends React.Component {
       sorter: (a, b) => a.administratorId- b.administratorId,
       sortOrder: sortedInfo.columnKey === 'administratorId' && sortedInfo.order
     }, {
-      title: '账号',
+      title: 'account number',
       dataIndex: 'userName',
       key: 'userName'
     }, {
-      title: '密码',
+      title: 'password',
       dataIndex: 'passWord',
       key: 'passWord'
     }, {
-      title: '昵称',
+      title: 'nickname',
       dataIndex: 'nickName',
       key: 'nickName',
     }, {
-      title: '手机号',
+      title: 'phone number',
       dataIndex: 'phone',
       key: 'phone',
     }, {
-      title: '是否为超级管理员',
+      title: 'Is it a super administrator?',
       dataIndex: 'superLevel',
       key: 'superLevel',
       render: (text, record) => {
@@ -164,7 +164,7 @@ export default class Administrators extends React.Component {
         }
       }
     }, {
-      title: '操作',
+      title: 'operating',
       key: 'action',
       render: (text, record) => (
         <span>
@@ -172,14 +172,14 @@ export default class Administrators extends React.Component {
             type="primary"
             onClick={() => this.handleUpdateOpen(record)}
           >
-            修改
+            modify
           </Button>
           <Divider type="vertical" />
           <Button
             type="danger"
             onClick={() => this.handleDeleteOpen(record)}
           >
-            删除
+            delete
           </Button>
         </span>
       )
@@ -190,17 +190,17 @@ export default class Administrators extends React.Component {
         <Panel minus>
           <Panel.Header type="light">
             <Breadcrumb>
-              <Breadcrumb.Item>主页</Breadcrumb.Item>
-              <Breadcrumb.Item>管理员信息</Breadcrumb.Item>
+              <Breadcrumb.Item>Homepage</Breadcrumb.Item>
+              <Breadcrumb.Item>Administrator information</Breadcrumb.Item>
             </Breadcrumb>
-            <h2>管理员信息</h2>
-            <p>管理员信息，可以进行新增管理员、修改管理员信息、删除管理员。</p>
+            <h2>Administrator information</h2>
+            <p>Administrator information, you can add administrators, modify administrator information, delete administrators.</p>
             <Divider style={{marginTop: '10px', marginBottom: '30px'}} />
             <Button
               type="primary"
               onClick={this.handleAddOpen}
             >
-              新增管理员
+              Add administrator
             </Button>
           </Panel.Header>
           <Panel.Body type="light">

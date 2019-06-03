@@ -1,12 +1,12 @@
 const dataFormat = (date, fmt) => {
   var o = {
-    "M+": date.getMonth()+1,                 //月份
-    "d+": date.getDate(),                    //日
-    "h+": date.getHours(),                   //小时
-    "m+": date.getMinutes(),                 //分
-    "s+": date.getSeconds(),                 //秒
-    "q+": Math.floor((date.getMonth()+3)/3), //季度
-    "S" : date.getMilliseconds()             //毫秒
+    "M+": date.getMonth()+1,                 //month
+    "d+": date.getDate(),                    //day
+    "h+": date.getHours(),                   //hour
+    "m+": date.getMinutes(),                 //Minute
+    "s+": date.getSeconds(),                 //second
+    "q+": Math.floor((date.getMonth()+3)/3), //Quarter
+    "S" : date.getMilliseconds()             //millisecond
   };
 
   if (/(y+)/.test(fmt)) {

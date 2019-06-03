@@ -40,7 +40,7 @@ export default class UpdatePassWord extends React.Component {
     value: PropTypes.object.isRequired
   }
 
-  // 提交事件
+  // Submit event
   handleSubmit = (e) => {
     e.preventDefault()
 
@@ -50,7 +50,7 @@ export default class UpdatePassWord extends React.Component {
         return;
       }
 
-      // 调用本类更新方法
+      // Call this class update method
       this.updateUser(values);
 
     })
@@ -63,25 +63,25 @@ export default class UpdatePassWord extends React.Component {
     } = this.props
 
     try {
-      //调用更新 api
+      //Call this class update method... api
       const res = await userService.update(
         adminId,
         token,
         user
       )
-      message.success('修改成功');
+      message.success('Successfully modified');
       this.props.fetchUsers(adminId,token);
       this.props.handleSubmit();
     } catch (err) {
       if (err.message === undefined) {
-        const errorMessage = '服务器出错啦，请耐心等待，麻烦很耐心的等待一年，谢谢'
+        const errorMessage = 'The server is wrong, please be patient, please wait patiently for a year, thank you'
         this.props.authError(errorMessage)
       }
       if (!err.response) {
         this.props.authError(err);
       }
       if (err.response.status === 401) {
-        const errorMessage = '您的登录已过期，请重新登录'
+        const errorMessage = 'Your login has expired, please log in again'
         this.props.authError(errorMessage)
       }
       // 修改不成功
@@ -108,9 +108,9 @@ export default class UpdatePassWord extends React.Component {
     return (
       <Modal
         visible={visible}
-        title="修改用户信息"
-        okText="修改"
-        cancelText="取消"
+        title="Modify user information"
+        okText="modify"
+        cancelText="cancel"
         onCancel={handleCancel}
         onOk={this.handleSubmit}
       >
@@ -122,22 +122,22 @@ export default class UpdatePassWord extends React.Component {
               <Input type="text" disabled/>
             )}
           </FormItem>
-          <FormItem label="用户账号">
+          <FormItem label="user account">
             {getFieldDecorator('userName', {
               initialValue: userName
             })(
               <Input type="text" disabled/>
             )}
           </FormItem>
-          <FormItem label="密码">
+          <FormItem label="password">
             {getFieldDecorator('passWord', {
               rules: [{
                 required: true,
-                message: '请输入密码'
+                message: 'Please enter your password'
               }, {
                 max: 30,
                 min: 1,
-                message: '用户密码不能超过30个字符'
+                message: 'User password cannot exceed 30 characters'
               }],
               initialValue: passWord
             })(

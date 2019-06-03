@@ -123,16 +123,16 @@ export default class AddGoodMOdal extends React.Component {
         good.image.file
       )
       serviceEnd()
-      message.success("添加商品成功")
+      message.success("Add item successfully")
       handleSubmit()
     } catch (err) {
       serviceEnd()
       if (err.response === undefined) {
-        const errorMessage = '服务器错误，请稍后再试'
+        const errorMessage = 'Server error, please try again later'
         authError(errorMessage)
       }
       if (err.response.status === 401) {
-        const errorMessage = '您的登录已过期，请重新登录'
+        const errorMessage = 'Your login has expired, please log in again'
         authError(errorMessage)
       }
       if (err.response.status === 400) {
@@ -157,7 +157,7 @@ export default class AddGoodMOdal extends React.Component {
 
   priceValidator = (rule, value, callback) => {
     if (value <= 0) {
-      callback('价格必须大于0')
+      callback('Price must be greater than 0')
     }
     callback()
   }
@@ -176,42 +176,42 @@ export default class AddGoodMOdal extends React.Component {
     return (
       <Modal
         visible={visible}
-        title="新增商品"
-        okText="保存"
-        cancelText="取消"
+        title="Add item"
+        okText="Preservation"
+        cancelText="cancel"
         onCancel={handleCancel}
         onOk={this.handleSubmit}
       >
         <Form layout="vertical">
-          <FormItem label="商品名称:">
+          <FormItem label="product name:">
             {getFieldDecorator('goodName', {
               rules: [{
                 required: true,
-                message: '请输入商品名称'
+                message: 'Please enter the product name'
               }, {
                 max: 20,
                 min: 1,
-                message: '商品名称不能超过20个字符'
+                message: 'Product name cannot exceed 20 characters'
               }]
             })(
               <Input type="text"/>
             )}
           </FormItem>
-          <FormItem label="商品类别：">
+          <FormItem label="Product category：">
             {getFieldDecorator('categorySecondId', {
               rules: [{
                 required: true,
-                message: '请选择商品类别'
+                message: 'Please select a product category'
               }]
             })(
               <CategorySelector />
             )}
           </FormItem>
-          <FormItem label="图片:">
+          <FormItem label="image:">
             {getFieldDecorator('image', {
               rules: [{
                 required: true,
-                message: '请上传商品图片'
+                message: 'Please upload a product image'
               }]
             })(
               <Upload
@@ -225,14 +225,14 @@ export default class AddGoodMOdal extends React.Component {
               </Upload>
             )}
           </FormItem>
-          <FormItem label="现价:">
+          <FormItem label="Current price:">
             {getFieldDecorator('price', {
               rules: [{
                 required: true,
-                message: '请输入商品价格'
+                message: 'Please enter the price of the product'
               }, {
                 max: 10,
-                message: '价格不能超过十位数'
+                message: 'The price cannot exceed ten digits'
               }, {
                 validator: this.priceValidator
               }]
@@ -240,11 +240,11 @@ export default class AddGoodMOdal extends React.Component {
               <Input type="number"/>
             )}
           </FormItem>
-          <FormItem label="原价:">
+          <FormItem label="Original price:">
             {getFieldDecorator('originalPrice', {
               rules: [{
                 max: 10,
-                message: '价格不能超过十位数'
+                message: 'The price cannot exceed ten digits'
               }, {
                 validator:this.priceValidator
               }]
@@ -252,21 +252,21 @@ export default class AddGoodMOdal extends React.Component {
               <Input type="number"/>
             )}
           </FormItem>
-          <FormItem label="规格:">
+          <FormItem label="specification:">
             {getFieldDecorator('spec', {
               rules: [{
                 required: true ,
-                message: '请输入商品的规格'
+                message: 'Please enter the specifications of the product'
               }]
             })(
               <Input />
             )}
           </FormItem>
-          <FormItem label="原产地:">
+          <FormItem label="place of origin:">
             {getFieldDecorator('origin', {
               rules: [{
                 required: true,
-                message: '请输入商品的原产地'
+                message: 'Please enter the country of origin of the product'
               }]
             })(
               <Input />

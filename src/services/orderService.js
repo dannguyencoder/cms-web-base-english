@@ -43,7 +43,7 @@ const update = async function (adminId, token, orderId, status) {
 }
 
 /**
- * 发货
+ * Ship
  * @param {*} adminId
  * @param {*} token
  * @param {*} orderId

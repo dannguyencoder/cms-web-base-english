@@ -110,11 +110,11 @@ export default class CategoryFirst extends React.Component {
       dataIndex: 'categoryFirstId',
       key: 'categoryFirstId'
     }, {
-      title: '分类名称',
+      title: 'Category Name',
       dataIndex: 'categoryName',
       key: 'categoryName'
     }, {
-      title: '操作',
+      title: 'operating',
       key: 'action',
       render: (text, record) => (
         <span style={{width: '200px'}}>
@@ -122,14 +122,14 @@ export default class CategoryFirst extends React.Component {
             type="primary"
             onClick={() => this.handleUpdateOpen(record)}
           >
-            修改
+            modify
           </Button>
           <Divider type="vertical"/>
           <Button
             type="danger"
             onClick={() => this.handleDeleteOpen(record)}
           >
-            删除
+            delete
           </Button>
         </span>
       )
@@ -143,14 +143,14 @@ export default class CategoryFirst extends React.Component {
               <Breadcrumb.Item>主页</Breadcrumb.Item>
               <Breadcrumb.Item>一级商品分类</Breadcrumb.Item>
             </Breadcrumb>
-            <h2>一级商品分类</h2>
-            <p>一级商品分类展示，可以进行新增商品分类，修改商品分类，删除商品分类操作</p>
+            <h2>Primary commodity classification</h2>
+            <p>First-class product classification display, you can add new product classification, modify product classification, delete product classification operation</p>
             <Divider style={{marginTop: '10px', marginBottom: '30px'}} />
             <Button
               type="primary"
               onClick={this.handleAddFormOpen}
             >
-              新增分类
+              New classification
             </Button>
           </Panel.Header>
           <Panel.Body type="light">

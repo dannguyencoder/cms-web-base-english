@@ -11,17 +11,17 @@ function StatusFilter(props) {
 
   let content = ''
   if (status === 0) {
-    content = '未发货'
+    content = 'Not shipped'
   } else if (status === 1) {
-    content = '配送中'
+    content = 'In distribution'
   } else if (status === 2) {
-    content = '已完成'
+    content = 'completed'
   } else if (status === 3) {
-    content = '退款中'
+    content = 'Refunding'
   } else if (status === -1) {
-    content = '退款成功'
+    content = 'Refund successfully'
   } else {
-    content = '退款失败'
+    content = 'Refund failed'
   }
 
   const classes = classNames(

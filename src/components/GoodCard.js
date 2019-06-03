@@ -50,7 +50,7 @@ export default class GoodCard extends React.Component {
             >
               <img
                 src={good.image}
-                alt="商品图片"
+                alt="product picture"
               />
             </div>
           }

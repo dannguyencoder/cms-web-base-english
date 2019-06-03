@@ -40,7 +40,7 @@ export default class UpdateUserModal extends React.Component {
     value: PropTypes.object.isRequired
   }
 
-  // 提交事件
+  // Submit event
   handleSubmit = (e) => {
     e.preventDefault()
 
@@ -50,7 +50,7 @@ export default class UpdateUserModal extends React.Component {
         return;
       }
 
-      // 调用本类更新方法
+      // Call this class update method
       this.updateUser(values);
 
     })
@@ -63,28 +63,28 @@ export default class UpdateUserModal extends React.Component {
     } = this.props
 
     try {
-      //调用更新 api
+      //Call update api
       console.log("update user");
       const res = await userService.update(
         adminId,
         token,
         user
       )
-      message.success('修改成功');
+      message.success('Successfully modified');
       this.props.fetchUsers(adminId,token);
       this.props.handleSubmit();
     } catch (err) {
       console.log("err");
       console.log(err);
       if (err.message === undefined) {
-        const errorMessage = '服务器出错啦，请耐心等待，麻烦很耐心的等待一年，谢谢'
+        const errorMessage = 'The server is wrong, please be patient, please wait patiently for a year, thank you'
         this.props.authError(errorMessage)
       }
       if (!err.response) {
         this.props.authError(err);
       }
       if (err.response.status === 401) {
-        const errorMessage = '您的登录已过期，请重新登录'
+        const errorMessage = 'Your login has expired, please log in again'
         this.props.authError(errorMessage)
       }
       // 修改不成功
@@ -104,7 +104,7 @@ export default class UpdateUserModal extends React.Component {
       value
     } = this.props
 
-    const {getFieldDecorator} = form;//字段
+    const {getFieldDecorator} = form;//Field
     const userId = value ? value.userId : ''
     const userName = value ? value.userName : ''
     const nickName = value ? value.nickName : ''
@@ -112,9 +112,9 @@ export default class UpdateUserModal extends React.Component {
     return (
       <Modal
         visible={visible}
-        title="修改用户信息"
-        okText="修改"
-        cancelText="取消"
+        title="Modify user information"
+        okText="modify"
+        cancelText="cancel"
         onCancel={handleCancel}
         onOk={this.handleSubmit}
       >
@@ -126,30 +126,30 @@ export default class UpdateUserModal extends React.Component {
               <Input type="text" disabled/>
             )}
           </FormItem>
-          <FormItem label="用户账号">
+          <FormItem label="user account">
             {getFieldDecorator('userName', {
               rules: [{
                 required: true,
-                message: '请输入账号'
+                message: 'Please input Username'
               }, {
                 max: 100,
                 min: 1,
-                message: '用户账号不能超过100个字符'
+                message: 'User account cannot exceed 100 characters'
               }],
               initialValue: userName
             })(
               <Input type="text"/>
             )}
           </FormItem>
-          <FormItem label="用户昵称">
+          <FormItem label="User's Nickname">
             {getFieldDecorator('nickName', {
               rules: [{
                 required: true,
-                message: '请输入昵称'
+                message: 'Please enter a nickname'
               }, {
                 max: 100,
                 min: 1,
-                message: '用户昵称不能超过100个字符'
+                message: 'User nickname cannot exceed 100 characters'
               }],
               initialValue: nickName
             })(

@@ -78,16 +78,16 @@ export default class AddAdminModal extends React.Component {
           superLevel
         }
       )
-      message.success('添加新管理员成功')
+      message.success('Add new administrator successfully')
       this.props.fetchAdmins(adminId, token)
       this.props.handleSubmit()
     } catch (err) {
       if (err.message === undefined) {
-        const errorMessage = '服务器出错啦，请耐心等待，麻烦很耐心的等待一年，谢谢'
+        const errorMessage = 'The server is wrong, please be patient, please wait patiently for a year, thank you'
         this.props.authError(errorMessage)
       }
       if (err.response.status === 401) {
-        const errorMessage = '您的登录已过期，请重新登录'
+        const errorMessage = 'Your login has expired, please log in again'
         this.props.authError(errorMessage)
       }
       // 添加不成功
@@ -111,74 +111,74 @@ export default class AddAdminModal extends React.Component {
     return (
       <Modal
         visible={visible}
-        title="添加管理员"
-        okText="添加"
-        cancelText="取消"
+        title="Add administrator"
+        okText="Add to"
+        cancelText="cancel"
         onCancel={handleCancel}
         onOk={this.handleSubmit}
       >
         <Form layout="vertical">
-          <FormItem label="用户名">
+          <FormItem label="username">
             {getFieldDecorator('userName', {
               rules: [{
                 required: true,
-                message: '请输入用户名'
+                message: 'please enter user name'
               }, {
                 max: 30,
                 min: 1,
-                message: '用户名不能超过30个字符'
+                message: 'Username cannot exceed 30 characters'
               }]
             })(
               <Input type="text" />
             )}
           </FormItem>
-          <FormItem label="密码">
+          <FormItem label="password">
             {getFieldDecorator('passWord', {
               rules: [{
                 required: true,
-                message: '请输入密码'
+                message: 'Please enter your password'
               }, {
                 max: 30,
                 min: 1,
-                message: '密码不能超过30个字符'
+                message: 'Password cannot exceed 30 characters'
               }]
             })(
               <Input type="text" />
             )}
           </FormItem>
-          <FormItem label="昵称">
+          <FormItem label="nickname">
             {getFieldDecorator('nickName', {
               rules: [{
                 required: true,
-                message: '请输入昵称'
+                message: 'Please enter a nickname'
               }, {
                 max: 20,
                 min: 1,
-                message: '昵称不能超过20个字符'
+                message: 'Nickname cannot exceed 20 characters'
               }]
             })(
               <Input type="text" />
             )}
           </FormItem>
-          <FormItem label="手机号码">
+          <FormItem label="cellphone number">
             {getFieldDecorator('phone', {
               rules: [{
                 required: true,
-                message: '请输入手机号码'
+                message: 'Please enter the phone number'
               }, {
                 max: 12,
                 min: 1,
-                message: '手机号码不能超过12字符'
+                message: 'Mobile number cannot exceed 12 characters'
               }]
             })(
               <Input type="number" />
             )}
           </FormItem>
-          <FormItem label="是否为超级管理员">
+          <FormItem label="Is it a super administrator?">
             {getFieldDecorator('superLevel', {
               rules: [{
                 required: true,
-                message: '请选择管理员权限'
+                message: 'Please select admin rights'
               }],
               initialValue: false
             })(

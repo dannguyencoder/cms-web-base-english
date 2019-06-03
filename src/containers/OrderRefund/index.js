@@ -118,9 +118,9 @@ export default class Orders extends React.Component {
     return (
       <div>
         <p>
-          用户收货地址： {addressContent}
+          User receiving address： {addressContent}
         </p>
-        <h4>商品：</h4>
+        <h4>Product：</h4>
         {
           record.orderDetails.length > 0 ? (
             record.orderDetails.map((item) => {
@@ -158,7 +158,7 @@ export default class Orders extends React.Component {
       sorter: (a, b) => a.orderId - b.orderId,
       sortOrder: sortedInfo.columnKey === 'orderId' && sortedInfo.order
     }, {
-      title: '用户id',
+      title: 'User id',
       dataIndex: 'userId',
       key: 'userId'
     }, {
@@ -166,7 +166,7 @@ export default class Orders extends React.Component {
       dataIndex: 'amount',
       key: 'amount'
     }, {
-      title: '订单状态',
+      title: 'Order Status',
       dataIndex: 'status',
       key: 'status',
       render: (text, record) => {
@@ -177,15 +177,15 @@ export default class Orders extends React.Component {
         )
       },
       filters: [
-        { text: '未发货', value: '0' },
-        { text: '配送中', value: '1' }
+        { text: 'Not shipped', value: '0' },
+        { text: 'In distribution', value: '1' }
       ],
       filteredValue: filteredInfo.status || null,
       onFilter: (value, recored) => {
         return recored.status === parseInt(value, 10)
       }
     }, {
-      title: '下单时间',
+      title: 'order time',
       dataIndex: 'createTime',
       render: (text, record) => {
         return (
@@ -198,11 +198,11 @@ export default class Orders extends React.Component {
       }
       // key: 'createTime',
     }, {
-      title: '备注',
+      title: 'Remarks',
       dataIndex: 'remarks',
       key: 'remarks'
     }, {
-      title: '操作',
+      title: 'operating',
       key: 'action',
       render: (text, record) => {
         return (
@@ -211,14 +211,14 @@ export default class Orders extends React.Component {
               type="primary"
               onClick={() => this.handleConfirmRefund(record.orderId)}
             >
-              同意
+              agree
             </Button>
             <Divider type="vertical" />
             <Button
               type="danger"
               onClick={() => this.handleRefuse(record.orderId)}
             >
-              拒绝
+              Refuse
             </Button>
           </span>
         )

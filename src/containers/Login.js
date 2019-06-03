@@ -71,7 +71,7 @@ export default class Login extends React.Component {
         if (this.props.error) {
           message.error(this.props.error)
         } else {
-          message.success('登陆成功')
+          message.success('Landed successfully')
         }
 
         if (values.remember === true) {
@@ -119,7 +119,7 @@ export default class Login extends React.Component {
                 {WEBSITE_NAME}
               </h2>
             </div>
-            <p>请使用您的账号密码登录系统</p>
+            <p>Please use your account password to log in to the system.</p>
             <Form
               style={{textAlign: 'left'}}
               onSubmit={this.handleSubmit}
@@ -128,10 +128,10 @@ export default class Login extends React.Component {
                 {
                   getFieldDecorator('username', {
                     initialValue: username,
-                    rules: [{ required: true, message: '请输入您的账号!'}]
+                    rules: [{ required: true, message: 'Please enter your account number!'}]
                   })(
                     <Input
-                      placeholder="账号"
+                      placeholder="account number"
                     />
                   )
                 }
@@ -140,11 +140,11 @@ export default class Login extends React.Component {
                 {
                   getFieldDecorator('password', {
                     initialValue: password,
-                    rules: [{ required: true, message: '请输入密码!'}]
+                    rules: [{ required: true, message: 'Please enter your password!'}]
                   })(
                     <Input
                       type="password"
-                      placeholder="密码"
+                      placeholder="password"
                     />
                   )
                 }
@@ -171,12 +171,12 @@ export default class Login extends React.Component {
                       <Spin />
                     ) : ''
                   }
-                  登录
+                  log in
                 </Button>
               </FormItem>
             </Form>
             <p>
-            您还未注册？请 <a href="">注册</a>
+              You have not registered yet？please <a href="">registered</a>
             </p>
             <Copyright className="page-copyright-inverse" />
           </div>

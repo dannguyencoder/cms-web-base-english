@@ -62,19 +62,19 @@ export default class UpdateAdminModal extends React.Component {
         token,
         admin
       )
-      message.success('修改成功')
+      message.success('Successfully modified')
       this.props.fetchAdmins(adminId, token)
       this.props.handleSubmit()
     } catch (err) {
       if (err.message === undefined) {
-        const errorMessage = '服务器出错啦，请耐心等待，麻烦很耐心的等待一年，谢谢'
+        const errorMessage = 'The server is wrong, please be patient, please wait patiently for a year, thank you'
         this.props.authError(errorMessage)
       }
       if (err.response.status === 401) {
-        const errorMessage = '您的登录已过期，请重新登录'
+        const errorMessage = 'Your login has expired, please log in again'
         this.props.authError(errorMessage)
       }
-      // 修改不成功
+      // The modification was unsuccessful
       if (err.response.status === 400 ||err.response.status === 404) {
         const errorMessage = err.response.data.message
         message.error(errorMessage)
@@ -101,18 +101,18 @@ export default class UpdateAdminModal extends React.Component {
     return (
       <Modal
         visible={visible}
-        title="修改管理员信息"
-        okText="修改"
-        cancelText="取消"
+        title="Modify administrator information"
+        okText="modify"
+        cancelText="cancel"
         onCancel={handleCancel}
         onOk={this.handleSubmit}
       >
         <Form layout="vertical">
-          <FormItem label="管理员id">
+          <FormItem label="Administrator id">
             {getFieldDecorator('administratorId', {
               require: [{
                 required: true,
-                message: '请输入管理员id'
+                message: 'Please enter the administrator id'
               }],
               initialValue: administratorId
             })(
@@ -121,58 +121,58 @@ export default class UpdateAdminModal extends React.Component {
 
             }
           </FormItem>
-          <FormItem label="密码">
+          <FormItem label="password">
             {getFieldDecorator('passWord', {
               rules: [{
                 required: true,
-                message: '请输入密码'
+                message: 'Please enter your password'
               }, {
                 max: 30,
                 min: 1,
-                message: '密码不能超过30个字符'
+                message: 'Password cannot exceed 30 characters'
               }],
               initialValue: passWord
             })(
               <Input type="text" />
             )}
           </FormItem>
-          <FormItem label="昵称">
+          <FormItem label="nickname">
             {getFieldDecorator('nickName', {
               rules: [{
                 required: true,
-                message: '请输入昵称'
+                message: 'Please enter a nickname'
               }, {
                 max: 20,
                 min: 1,
-                message: '昵称不能超过20个字符'
+                message: 'Nickname cannot exceed 20 characters'
               }],
               initialValue: nickName
             })(
               <Input type="text" />
             )}
           </FormItem>
-          <FormItem label="手机号码">
+          <FormItem label="cellphone number">
             {getFieldDecorator('phone', {
               rules: [{
                 required: true,
-                message: '请输入手机号码'
+                message: 'Please enter the phone number'
               }],
               initialValue: phone
             })(
               <Input type="number" />
             )}
           </FormItem>
-          <FormItem label="是否为超级管理员">
+          <FormItem label="Is it a super administrator?">
             {getFieldDecorator('superLevel', {
               rules: [{
                 required: true,
-                message: '请选择管理员权限'
+                message: 'Please select admin rights'
               }],
               initialValue: superLevel
             })(
               <RadioGroup>
-                <Radio value={true}>是</Radio>
-                <Radio value={false}>否</Radio>
+                <Radio value={true}>Yes</Radio>
+                <Radio value={false}>no</Radio>
               </RadioGroup>
             )}
           </FormItem>

@@ -115,42 +115,42 @@ export default class Users extends React.Component {
       sorter: (a, b) => a.userId - b.userId,
       sortOrder: sortedInfo.columnKey === 'userId' && sortedInfo.order
     }, {
-      title: '账号',
+      title: 'account number',
       dataIndex: 'userName',
       key: 'userName'
     }, {
-      title: '密码',
+      title: 'password',
       dataIndex: 'passWord',
       key: 'passWord'
     }, {
-      title: '昵称',
+      title: 'nickname',
       dataIndex: 'nickName',
       key: 'nickName'
     }, {
-      title: '手机号码',
+      title: 'cellphone number',
       dataIndex: 'phone',
       key: 'phone'
     }, {
-      title: '性别',
+      title: 'gender',
       dataIndex: 'sex',
       key: 'sex',
       filters: [
-        { text: '男', value: 'MAN' },
-        { text: '女', value: 'WOMAN' }
+        { text: 'male', value: 'MAN' },
+        { text: 'Female', value: 'WOMAN' }
       ],
       filteredValue: filteredInfo.sex || null,
       onFilter: (value, recored) => recored.sex === value
     }, {
-      title: '操作',
+      title: 'operating',
       key: 'action',
       render: (text, record) => (
         <span>
           <Button type="primary" onClick={() => this.handleUpdateOpen(record)}>
-            修改信息
+            Modify information
           </Button>
           <Divider type="vertical" />
           <Button type="danger" onClick={() => this.handleAlterOpen(record)}>
-            修改密码
+            change Password
           </Button>
         </span>
       )
@@ -161,11 +161,11 @@ export default class Users extends React.Component {
         <Panel minus>
           <Panel.Header type="light">
             <Breadcrumb>
-              <Breadcrumb.Item>主页</Breadcrumb.Item>
-              <Breadcrumb.Item>用户列表</Breadcrumb.Item>
+              <Breadcrumb.Item>Homepage</Breadcrumb.Item>
+              <Breadcrumb.Item>user list</Breadcrumb.Item>
             </Breadcrumb>
-            <h2>用户列表</h2>
-            <p>用户信息展示，可以进行修改用户个人信息，修改用户密码操作</p>
+            <h2>user list</h2>
+            <p>User information display, you can modify the user's personal information, modify the user password operation</p>
           </Panel.Header>
           <Panel.Body type="light">
             <Table

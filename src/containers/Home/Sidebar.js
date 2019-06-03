@@ -75,44 +75,44 @@ export default class Sidebar extends React.Component {
           <Item key="1">
             <Link to="users">
               <Icon type="user" />
-              <span>用户信息管理</span>
+              <span>User information management</span>
             </Link>
           </Item>
           <Item key="2">
             <Link to="/goods">
               <Icon type="table" />
-              <span>商品信息管理</span>
+              <span>Commodity information management</span>
             </Link>
           </Item>
-          <SubMenu title={<span><Icon type="tags-o" />商品分类管理</span>}>
+          <SubMenu title={<span><Icon type="tags-o" />Commodity classification management</span>}>
             <Item key="3">
               <Link to="/category/first">
-                <span>一级分类</span>
+                <span>Primary classification</span>
               </Link>
             </Item>
             <Item key="4">
               <Link to="/category/second">
-                <span>二级分类</span>
+                <span>Secondary classification</span>
               </Link>
             </Item>
           </SubMenu>
-          <SubMenu title={<span><Icon type="profile" />订单信息管理</span>}>
+          <SubMenu title={<span><Icon type="profile" />Order information management</span>}>
             <Item key="5">
               <Link to="/orders">
-                <span>订单查询</span>
+                <span>Order Tracking</span>
               </Link>
             </Item>
             <Item key="6">
               <Badge count={wait + dispatching}>
                 <Link to="/order/dispatch">
-                  <span>订单配送&nbsp;&nbsp;</span>
+                  <span>Order delivery&nbsp;&nbsp;</span>
                 </Link>
               </Badge>
             </Item>
             <Item key="7">
               <Badge count={refunding}>
                 <Link to="/order/refund">
-                  <span>退款处理&nbsp;&nbsp;</span>
+                  <span>Refund processing&nbsp;&nbsp;</span>
                 </Link>
               </Badge>
             </Item>
@@ -120,7 +120,7 @@ export default class Sidebar extends React.Component {
           <Item key="8">
             <Link to="/advertisments">
               <Icon type="switcher" />
-              <span>滑动广告管理</span>
+              <span>Sliding ad management</span>
             </Link>
           </Item>
           {
@@ -128,7 +128,7 @@ export default class Sidebar extends React.Component {
               <Item key="9">
                 <Link to="/admins">
                   <Icon type="solution" />
-                  <span>管理员信息管理</span>
+                  <span>Administrator information management</span>
                 </Link>
               </Item>
             ) : null

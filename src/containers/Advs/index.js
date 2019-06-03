@@ -125,22 +125,22 @@ export default class Adv extends React.Component {
       sorter: (a, b) => a.advSwiperId - b.advSwiperId,
       sortOrder: sortedInfo.columnKey === 'advSwiperId' && sortedInfo.order
     }, {
-      title: '广告名称',
+      title: 'Ad name',
       dataIndex: 'name',
       key: 'name'
     }, {
-      title: '所属分类',
+      title: 'category',
       dataIndex: 'categoryName',
       key: 'categoryName'
     }, {
-      title: '图片',
+      title: 'image',
       dataIndex: 'image',
       key: 'image',
       render: (text, record) => (
         <img className="advs-table-img" alt=".." src={text} />
       )
     }, {
-      title: '操作',
+      title: 'operating',
       key: 'action',
       render: (text, record) => (
         <span>
@@ -148,14 +148,14 @@ export default class Adv extends React.Component {
             type="primary"
             onClick={() => this.handleOpenUpdateModal(record)}
           >
-            修改
+            modify
           </Button>
           <Divider type="vertical" />
           <Button
             type="danger"
             onClick={() => this.handleDeleteModalOpen(record)}
           >
-            删除
+            delete
           </Button>
         </span>
       )
@@ -166,17 +166,17 @@ export default class Adv extends React.Component {
         <Panel minus>
           <Panel.Header type="light">
             <Breadcrumb>
-              <Breadcrumb.Item>主页</Breadcrumb.Item>
-              <Breadcrumb.Item>广告管理</Breadcrumb.Item>
+              <Breadcrumb.Item>Homepage</Breadcrumb.Item>
+              <Breadcrumb.Item>Advertising management</Breadcrumb.Item>
             </Breadcrumb>
-            <h2>广告管理</h2>
-            <p>广告信息展示，可以进行新增广告，修改广告，删除广告操作。注意：最多只允许存在五个广告位。</p>
+            <h2>Advertising management</h2>
+            <p>Advertising information display, you can add new ads, modify ads, delete ads. Note: Only up to five ad slots are allowed.</p>
             <Divider style={{marginTop: '10px', marginBottom: '30px'}} />
             <Button
               type="primary"
               onClick={this.handleOpenAddModal}
             >
-              新增广告
+              Add new ads
             </Button>
           </Panel.Header>
           <Panel.Body type="light">

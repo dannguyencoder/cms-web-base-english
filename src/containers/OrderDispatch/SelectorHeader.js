@@ -86,18 +86,18 @@ export default class SelectorHeader extends React.Component {
           <Breadcrumb.Item>订单配送</Breadcrumb.Item>
         </Breadcrumb>
         <h2>
-          订单配送
+          Order delivery
 
           <RadioGroup onChange={this.handleStatusChange} defaultValue={status} style={{float: 'right'}}>
             <Badge dot={wait > 0}>
-              <RadioButton value={ORDER_WAIT}>待发货</RadioButton>
+              <RadioButton value={ORDER_WAIT}>to be delivered</RadioButton>
             </Badge>
             <Badge dot={dispatching > 0}>
-              <RadioButton value={ORDER_DISPATCHING}>配送中</RadioButton>
+              <RadioButton value={ORDER_DISPATCHING}>In distribution</RadioButton>
             </Badge>
           </RadioGroup>
         </h2>
-        <p>管理订单的配送，查看待发货和配送中订单，可以对订单进行发货处理和确认送达处理。</p>
+        <p>Manage the order delivery, view the orders to be shipped and delivered, and process the delivery and confirm the delivery of the order.</p>
         <Divider style={{marginTop: '10px', marginBottom: '30px'}} />
         <Form className="form-search" onSubmit={this.handleSubmit}>
           <Row gutter={24}>
@@ -111,7 +111,7 @@ export default class SelectorHeader extends React.Component {
             <Col span={5}>
               <FormItem
                 className="form-flex-wrapper"
-                label="用户名称"
+                label="user name"
               >
                 {getFieldDecorator('userName', {
                   initialValue: ""
@@ -121,7 +121,7 @@ export default class SelectorHeader extends React.Component {
               </FormItem>
             </Col>
             <Col span={7}>
-              <FormItem label="时间:">
+              <FormItem label="time:">
                 {getFieldDecorator('createTime', {
                   initialValue: ''
                 })(

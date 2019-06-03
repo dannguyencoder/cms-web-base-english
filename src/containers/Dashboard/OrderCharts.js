@@ -12,7 +12,7 @@ export default class OrderCharts extends React.Component {
 
     return {
       title : {
-        text: '订单情况概要',
+        text: 'Order status summary',
         x:'center'
       },
       tooltip : {
@@ -22,19 +22,19 @@ export default class OrderCharts extends React.Component {
       legend: {
         orient: 'vertical',
         left: 'left',
-        data: ['待发货', '交易成功', '退款中', '配送中']
+        data: ['to be delivered', 'Successful transaction', 'Refunding', 'In distribution']
       },
       series : [
         {
-        name: '统计情况',
+        name: 'Statistics',
         type: 'pie',
         radius : '55%',
         center: ['50%', '60%'],
         data:[
-          {value: wait, name:'待发货'},
-          {value: success, name:'交易成功'},
-          {value: refunding, name:'退款中'},
-          {value: dispatching, name:'配送中'},
+          {value: wait, name:'to be delivered'},
+          {value: success, name:'Successful transaction'},
+          {value: refunding, name:'Refunding'},
+          {value: dispatching, name:'In distribution'},
         ],
         itemStyle: {
           emphasis: {

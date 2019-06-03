@@ -10,7 +10,7 @@ export default class ConversionCharts extends React.Component {
 
     return {
       title : {
-        text: '客户收藏转化率',
+        text: 'Customer collection conversion rate',
         x:'center'
       },
       tooltip : {
@@ -20,17 +20,17 @@ export default class ConversionCharts extends React.Component {
       legend: {
         orient: 'vertical',
         left: 'left',
-        data: ['收藏购物车','已完成订单']
+        data: ['Favorite shopping cart','Order completed']
       },
       series : [
         {
-        name: '统计情况',
+        name: 'Statistics',
         type: 'pie',
         radius : '55%',
         center: ['50%', '60%'],
         data:[
-          {value: collection, name:'收藏购物车'},
-          {value: success, name:'已完成订单'},
+          {value: collection, name:'Favorite shopping cart'},
+          {value: success, name:'Order completed'},
         ],
         itemStyle: {
           emphasis: {

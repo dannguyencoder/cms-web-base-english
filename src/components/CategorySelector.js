@@ -133,7 +133,7 @@ export default class CategorySelector extends React.Component {
       return (
         <Spin>
           <Select defaultValue="1" style={{ width: 120 }} allowClear disabled>
-            <Option value="1">正在获取数据</Option>
+            <Option value="1">Getting data</Option>
           </Select>
         </Spin>
       )
@@ -143,7 +143,7 @@ export default class CategorySelector extends React.Component {
         <Select
           showSearch
           style={{ width: 200 }}
-          // placeholder="请选择一个分类"
+          // placeholder="Please select a category"
           value={value}
           optionFilterProp="children"
           onChange={this.handleChange}
@@ -152,7 +152,7 @@ export default class CategorySelector extends React.Component {
           {
             allItem ? (
               <Option value="all" key={-1}>
-                全部
+                All
               </Option>
             ) : ""
           }

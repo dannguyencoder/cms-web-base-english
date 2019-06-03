@@ -185,7 +185,7 @@ export default class Goods extends React.Component {
     const processedGoods = []
     const goodList = []
 
-    // 处理商品列表数据，数组首个为null，放button用
+    // Processing the product list data, the first one of the array is null, put the button
     for (let i = 0, len = goods.length; i < len;) {
       if (i === 0) {
         processedGoods.push([null, ...goods.slice(0, 2)])
